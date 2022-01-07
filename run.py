@@ -39,7 +39,12 @@ def play_game(letters, grid, lives):
     guesses = []
     if letters == grid:
         print(f"Well done you have completed the game the word was {letters}\n")
-        return (f"Well done you have completed the game the word was {letters}")
+        return "Game Complete"
+    
+    if lives == 0:
+        print("You have no lives left. Game Over!")
+        return "End Game"
+
     while True:
         user_input = input("\nEnter a letter you think is within the word:\n")
         if user_input.isalpha():
