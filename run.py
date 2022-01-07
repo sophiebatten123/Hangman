@@ -36,12 +36,14 @@ def play_game(letters, grid):
     Guessed answers are then added to a list.
     """
     guesses = []
+    if letters == grid:
+        print(f"Well done you have completed the game the word was {letters}\n")
+        return (f"Well done you have completed the game the word was {letters}")
     while True:
         user_input = input("\nPlease enter a letter you think is contained within the word:\n")
         if user_input.isalpha():
             guesses.append(user_input)
             check_answers(user_input, letters,grid)
-            print(f"Your guesses so far are {guesses}")
             return user_input
         else:
             print("Please use only letters, try again")
@@ -55,15 +57,12 @@ def check_answers(user_input, letters, grid):
     keep playing.
     """
     if user_input in letters:
-        if letters != grid:
             index = letters.index(user_input)
             grid[index] = user_input
             print(f"Your letter is at position {index}")
             print(f"Well done {user_input} is in the word!")
             print(f"Your new grid looks like {grid}")
             play_game(letters, grid)
-        else:
-            print(f"Well done you have completed the game the word was {letters}")
     else:
         print(f"Try Again {user_input} was not in the word!")
         play_game(letters, grid)
