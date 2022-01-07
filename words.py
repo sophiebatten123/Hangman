@@ -1,3 +1,7 @@
+"""
+A list of words that can be randomly generated to the game board.
+"""
+
 word_list = [
     'promotion',
     'thanks',
