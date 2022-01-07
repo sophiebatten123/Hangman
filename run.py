@@ -1,4 +1,4 @@
 from words import word_list
+import random
 
-print(word_list[0])
-print(word_list[49])
+print(random.choice(word_list))
