@@ -7,7 +7,7 @@ def get_word():
     it then returns the variable once it has been ran
     """
     word = random.choice(word_list)
-    print(word)
+    
     return word
 
 def make_board(word):
@@ -17,11 +17,13 @@ def make_board(word):
 
     print(letters)
     print(grid)
-    print(word_grid)
+
     return word_grid
 
 def main():
     word = get_word()
     make_board(word)
 
+print("Welcome to Hangman!")
+print("To begin playing you must first guess a letter contained within the word:\n")
 main()
