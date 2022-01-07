@@ -18,7 +18,13 @@ def make_board(word):
     print(letters)
     print(grid)
 
-    return word_grid
+    play_game(letters, grid)
+
+    return grid
+
+def play_game(letters, grid):
+    print(f"Your grid looks like {grid}")
+    print(f"Your letters are {letters}")
 
 def main():
     word = get_word()
