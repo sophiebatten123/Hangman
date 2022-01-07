@@ -63,19 +63,20 @@ def check_answers(user_input, letters, grid, lives):
     keep playing.
     """
     if user_input in letters:
-        print(letters)
-        index = letters.index(user_input)
-        grid[index] = user_input
-        print(f"{index}")
-        print(f"Well done {user_input} is in the word!")
+        for index, letter in enumerate(letters):
+            if letter == user_input:
+                grid[index] = user_input
+
+                print(f"Well done {user_input} is in the word!")
         print(f"{grid}")
-        play_game(letters, grid, lives)
     else:
         print(f"Try Again {user_input} was not in the word!")
+
         lives -= 1
         print(f"You have {lives} remaining")
-        play_game(letters, grid, lives)
+
         
+    play_game(letters, grid, lives)
 
 def main():
     word = get_word()
