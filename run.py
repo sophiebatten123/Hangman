@@ -1,4 +1,9 @@
 from words import word_list
 import random
 
-print(random.choice(word_list))
+def get_word():
+    word = random.choice(word_list)
+    print(word)
+    return word
+
+get_word()
