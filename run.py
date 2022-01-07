@@ -10,7 +10,13 @@ def get_word():
     
     return word
 
+
 def make_board(word):
+    """
+    Create a board consisting of empty lines the length
+    of the randomly generated word. Play game is then
+    initialised.
+    """
     word_grid = "_" * len(word)
     letters = list(word)
     grid = list(word_grid)
@@ -22,7 +28,13 @@ def make_board(word):
 
     return grid
 
+
 def play_game(letters, grid):
+    """
+    User input is required for the game to begin and conditions
+    have been set to specify that the input must be a letter.
+    Guessed answers are then added to a list.
+    """
     guesses = []
     while True:
         user_input = input("\nPlease enter a letter you think is contained within the word:\n")
@@ -36,18 +48,27 @@ def play_game(letters, grid):
 
 
 def check_answers(user_input, letters, grid):
-    while letters != grid:
-        if user_input in letters:
+    """
+    User input is then passed to the check answers function.
+    This specifies if the answer is correct replace the value
+    within the grid. If it is incorrect or the word is incomplete 
+    keep playing.
+    """
+    if user_input in letters:
+        if letters != grid:
             index = letters.index(user_input)
             grid[index] = user_input
             print(f"Your letter is at position {index}")
             print(f"Well done {user_input} is in the word!")
             print(f"Your new grid looks like {grid}")
-            return (f"Well done {user_input} is in the word!")
-        else:
-            print(f"Try Again {user_input} was not in the word!")
             play_game(letters, grid)
+        else:
+            print(f"Well done you have completed the game the word was {letters}")
+    else:
+        print(f"Try Again {user_input} was not in the word!")
+        play_game(letters, grid)
         
+
 def main():
     word = get_word()
     make_board(word)
