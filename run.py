@@ -20,16 +20,17 @@ def make_board(word):
     word_grid = "_" * len(word)
     letters = list(word)
     grid = list(word_grid)
+    lives = 3
 
     print(letters)
     print(grid)
 
-    play_game(letters, grid)
+    play_game(letters, grid, lives)
 
     return grid
 
 
-def play_game(letters, grid):
+def play_game(letters, grid, lives):
     """
     User input is required for the game to begin and conditions
     have been set to specify that the input must be a letter.
@@ -40,16 +41,16 @@ def play_game(letters, grid):
         print(f"Well done you have completed the game the word was {letters}\n")
         return (f"Well done you have completed the game the word was {letters}")
     while True:
-        user_input = input("\nPlease enter a letter you think is contained within the word:\n")
+        user_input = input("\nEnter a letter you think is within the word:\n")
         if user_input.isalpha():
             guesses.append(user_input)
-            check_answers(user_input, letters,grid)
+            check_answers(user_input, letters, grid, lives)
             return user_input
         else:
             print("Please use only letters, try again")
 
 
-def check_answers(user_input, letters, grid):
+def check_answers(user_input, letters, grid, lives):
     """
     User input is then passed to the check answers function.
     This specifies if the answer is correct replace the value
@@ -57,14 +58,18 @@ def check_answers(user_input, letters, grid):
     keep playing.
     """
     if user_input in letters:
-            index = letters.index(user_input)
-            grid[index] = user_input
-            print(f"Well done {user_input} is in the word!")
-            print(f"{grid}")
-            play_game(letters, grid)
+        print(letters)
+        index = letters.index(user_input)
+        grid[index] = user_input
+        print(f"{index}")
+        print(f"Well done {user_input} is in the word!")
+        print(f"{grid}")
+        play_game(letters, grid, lives)
     else:
         print(f"Try Again {user_input} was not in the word!")
-        play_game(letters, grid)
+        lives -= 1
+        print(f"You have {lives} remaining")
+        play_game(letters, grid, lives)
         
 
 def main():
