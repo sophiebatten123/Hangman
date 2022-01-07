@@ -9,3 +9,14 @@ def get_word():
     word = random.choice(word_list)
     print(word)
     return word
+
+def make_board(word):
+    word_grid = " ___ " * len(word)
+    print(word_grid)
+    return word_grid
+
+def main():
+    word = get_word()
+    make_board(word)
+
+main()
