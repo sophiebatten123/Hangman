@@ -59,9 +59,8 @@ def check_answers(user_input, letters, grid):
     if user_input in letters:
             index = letters.index(user_input)
             grid[index] = user_input
-            print(f"Your letter is at position {index}")
             print(f"Well done {user_input} is in the word!")
-            print(f"Your new grid looks like {grid}")
+            print(f"{grid}")
             play_game(letters, grid)
     else:
         print(f"Try Again {user_input} was not in the word!")
