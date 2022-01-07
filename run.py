@@ -23,9 +23,13 @@ def make_board(word):
     return grid
 
 def play_game(letters, grid):
-    print(f"Your grid looks like {grid}")
-    print(f"Your letters are {letters}")
-
+    while True:
+        user_input = input("\nPlease enter a letter you think is contained within the word:\n")
+        if user_input.isalpha():
+            return user_input
+        else:
+            print("Please use only letters, try again")
+        
 def main():
     word = get_word()
     make_board(word)
