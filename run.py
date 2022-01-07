@@ -23,12 +23,25 @@ def make_board(word):
     return grid
 
 def play_game(letters, grid):
+    guesses = []
     while True:
         user_input = input("\nPlease enter a letter you think is contained within the word:\n")
         if user_input.isalpha():
+            guesses.append(user_input)
+            check_answers(user_input, letters,grid)
             return user_input
         else:
             print("Please use only letters, try again")
+
+
+def check_answers(user_input,letters,grid):
+    while letters != grid:
+        if user_input in letters:
+            print(f"Well done {user_input} is in the word!")
+            return f"Well done {user_input} is in the word!"
+        else:
+            print("Try Again!")
+            play_game(letters, grid)
         
 def main():
     word = get_word()
