@@ -29,18 +29,23 @@ def play_game(letters, grid):
         if user_input.isalpha():
             guesses.append(user_input)
             check_answers(user_input, letters,grid)
+            print(f"Your guesses so far are {guesses}")
             return user_input
         else:
             print("Please use only letters, try again")
 
 
-def check_answers(user_input,letters,grid):
+def check_answers(user_input, letters, grid):
     while letters != grid:
         if user_input in letters:
+            index = letters.index(user_input)
+            grid[index] = user_input
+            print(f"Your letter is at position {index}")
             print(f"Well done {user_input} is in the word!")
-            return f"Well done {user_input} is in the word!"
+            print(f"Your new grid looks like {grid}")
+            return (f"Well done {user_input} is in the word!")
         else:
-            print("Try Again!")
+            print(f"Try Again {user_input} was not in the word!")
             play_game(letters, grid)
         
 def main():
