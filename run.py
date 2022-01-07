@@ -11,7 +11,12 @@ def get_word():
     return word
 
 def make_board(word):
-    word_grid = " ___ " * len(word)
+    word_grid = "_" * len(word)
+    letters = list(word)
+    grid = list(word_grid)
+
+    print(letters)
+    print(grid)
     print(word_grid)
     return word_grid
 
