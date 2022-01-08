@@ -48,7 +48,7 @@ def play_game(letters, grid, lives):
         return "End Game"
 
     while True:
-        user_input = input("\nEnter a letter you think is within the word:\n")
+        user_input = input("\nEnter a letter you think is within the word:\n").lower()
         if user_input.isalpha():
             guesses.append(user_input)
             check_answers(user_input, letters, grid, lives)
@@ -69,10 +69,10 @@ def check_answers(user_input, letters, grid, lives):
             if letter == user_input:
                 grid[index] = user_input
 
-                print(f"Well done {user_input} is in the word!")
+        print(f"\nWell done {user_input} is in the word!")
         print(f"{grid}")
     else:
-        print(f"Try Again {user_input} was not in the word!")
+        print(f"\nTry Again {user_input} was not in the word!")
         lives -= 1
         print(f"You have {lives} remaining")
     play_game(letters, grid, lives)
