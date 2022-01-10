@@ -30,33 +30,35 @@ def make_board(word):
     lives = 7
     hangman = 0
 
+    print(letters)
     print(grid)
 
-    play_game(letters, grid, lives, hangman)
+    play_game(letters, grid, lives, hangman, word)
 
     return grid
 
 
-def play_game(letters, grid, lives, hangman):
+def play_game(letters, grid, lives, hangman, word):
     """
     User input is required for the game to begin and conditions
     have been set to specify that the input must be a letter.
     Guessed answers are then added to a list.
     """
+    global CONSOLE
     guesses = []
     if letters == grid:
-        print(f"Well done! The word was {letters}\n")
+        CONSOLE.print(f"\nWell done! The word was [red bold]{word}[/red bold] :smiley:\n")
         return "Game Complete"
     if lives == 0:
         print("You have no lives left. Game Over!")
         return "End Game"
 
     while True:
-        user_input = input("\nEnter a letter:\n").lower()
+        user_input = input("\nEnter a letter to begin:\n").lower()
         if user_input.isalpha():
             if len(user_input) == 1:
                 guesses.append(user_input)
-                check_answers(user_input, letters, grid, lives, hangman)
+                check_answers(user_input, letters, grid, lives, hangman, word)
                 return user_input
             else:
                 print("You must only enter a single letter. Try again!")
@@ -64,7 +66,7 @@ def play_game(letters, grid, lives, hangman):
             print("Please use only letters, try again")
 
 
-def check_answers(user_input, letters, grid, lives, hangman):
+def check_answers(user_input, letters, grid, lives, hangman, word):
     """
     User input is then passed to the check answers function.
     This specifies if the answer is correct replace the value
@@ -85,7 +87,7 @@ def check_answers(user_input, letters, grid, lives, hangman):
         hangman += 1
         print(f"You have {lives} guesses remaining")
         print(f"{grid}")
-    play_game(letters, grid, lives, hangman)
+    play_game(letters, grid, lives, hangman, word)
 
 
 def main():
