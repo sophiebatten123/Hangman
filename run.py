@@ -44,10 +44,10 @@ def play_game(letters, grid, lives, hangman, word):
     have been set to specify that the input must be a letter.
     Guessed answers are then added to a list.
     """
-    global CONSOLE
     guesses = []
     if letters == grid:
-        CONSOLE.print(f"\nWell done! The word was [red bold]{word}[/red bold] :smiley:\n")
+        CONSOLE.print(f"\nWell done! The word was [red bold]{word}[/red bold]"
+                      ":smiley:\n")
         return "Game Complete"
     if lives == 0:
         print("You have no lives left. Game Over!")
@@ -73,20 +73,22 @@ def check_answers(user_input, letters, grid, lives, hangman, word):
     within the grid. If it is incorrect or the word is incomplete
     keep playing.
     """
-    global CONSOLE
     if user_input in letters:
         for index, letter in enumerate(letters):
             if letter == user_input:
                 grid[index] = user_input
 
-        CONSOLE.print(f"\nWell done {user_input} is in the word!", style='bold green')
+        CONSOLE.print(f"\nWell done {user_input} is in"
+                      " the word!", style='bold green')
         print(f"{grid}")
     else:
-        CONSOLE.print(f"\nTry Again {user_input} was not in the word!", style='red bold')
+        CONSOLE.print(f"\nTry Again {user_input} was"
+                      "not in the word!", style='red bold')
         lives -= 1
         print(hangman_list[hangman])
         hangman += 1
-        CONSOLE.print(f"\nYou have {lives} guesses remaining", style='red bold')
+        CONSOLE.print(f"\nYou have {lives} guesses"
+                      " remaining", style='red bold')
         print(f"{grid}")
     play_game(letters, grid, lives, hangman, word)
 
