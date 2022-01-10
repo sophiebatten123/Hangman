@@ -54,7 +54,7 @@ def play_game(letters, grid, lives, hangman, word):
         return "End Game"
 
     while True:
-        user_input = input("\nEnter a letter to begin:\n").lower()
+        user_input = input("\nEnter a letter within the word:\n").lower()
         if user_input.isalpha():
             if len(user_input) == 1:
                 guesses.append(user_input)
@@ -73,19 +73,20 @@ def check_answers(user_input, letters, grid, lives, hangman, word):
     within the grid. If it is incorrect or the word is incomplete
     keep playing.
     """
+    global CONSOLE
     if user_input in letters:
         for index, letter in enumerate(letters):
             if letter == user_input:
                 grid[index] = user_input
 
-        print(f"\nWell done {user_input} is in the word!")
+        CONSOLE.print(f"\nWell done {user_input} is in the word!", style='bold green')
         print(f"{grid}")
     else:
-        print(f"\nTry Again {user_input} was not in the word!")
+        CONSOLE.print(f"\nTry Again {user_input} was not in the word!", style='red bold')
         lives -= 1
         print(hangman_list[hangman])
         hangman += 1
-        print(f"You have {lives} guesses remaining")
+        CONSOLE.print(f"\nYou have {lives} guesses remaining", style='red bold')
         print(f"{grid}")
     play_game(letters, grid, lives, hangman, word)
 
