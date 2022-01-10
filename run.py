@@ -2,8 +2,11 @@
 Import from other files
 """
 import random
+from rich.console import Console
 from words import word_list
 from hangman import hangman_list
+
+CONSOLE = Console()
 
 
 def get_word():
@@ -27,7 +30,6 @@ def make_board(word):
     lives = 7
     hangman = 0
 
-    print(letters)
     print(grid)
 
     play_game(letters, grid, lives, hangman)
@@ -81,7 +83,7 @@ def check_answers(user_input, letters, grid, lives, hangman):
         lives -= 1
         print(hangman_list[hangman])
         hangman += 1
-        print(f"You have {lives} lives remaining")
+        print(f"You have {lives} guesses remaining")
         print(f"{grid}")
     play_game(letters, grid, lives, hangman)
 
@@ -94,6 +96,8 @@ def main():
     make_board(word)
 
 
-print("Welcome to Hangman!")
-print("To begin playing enter a letter:\n")
+CONSOLE.print("Welcome to Hangman!\n", style='bold u')
+print("The aim of the game is to guess the word by entering letters.")
+print("For every incorrect answer the man will slowly be hung!\n")
+
 main()
