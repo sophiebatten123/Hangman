@@ -3,6 +3,7 @@ Import from other files
 """
 import random
 from words import word_list
+from hangman import hangman_list
 
 
 def get_word():
@@ -23,17 +24,18 @@ def make_board(word):
     word_grid = "_" * len(word)
     letters = list(word)
     grid = list(word_grid)
-    lives = 3
+    lives = 7
+    hangman = 0
 
     print(letters)
     print(grid)
 
-    play_game(letters, grid, lives)
+    play_game(letters, grid, lives, hangman)
 
     return grid
 
 
-def play_game(letters, grid, lives):
+def play_game(letters, grid, lives, hangman):
     """
     User input is required for the game to begin and conditions
     have been set to specify that the input must be a letter.
@@ -48,16 +50,16 @@ def play_game(letters, grid, lives):
         return "End Game"
 
     while True:
-        user_input = input("\nEnter a letter you think is within the word:\n").lower()
+        user_input = input("\nEnter a letter:\n").lower()
         if user_input.isalpha():
             guesses.append(user_input)
-            check_answers(user_input, letters, grid, lives)
+            check_answers(user_input, letters, grid, lives, hangman)
             return user_input
         else:
             print("Please use only letters, try again")
 
 
-def check_answers(user_input, letters, grid, lives):
+def check_answers(user_input, letters, grid, lives, hangman):
     """
     User input is then passed to the check answers function.
     This specifies if the answer is correct replace the value
@@ -74,8 +76,10 @@ def check_answers(user_input, letters, grid, lives):
     else:
         print(f"\nTry Again {user_input} was not in the word!")
         lives -= 1
+        print(hangman_list[hangman])
+        hangman += 1
         print(f"You have {lives} remaining")
-    play_game(letters, grid, lives)
+    play_game(letters, grid, lives, hangman)
 
 
 def main():
