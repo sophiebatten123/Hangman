@@ -78,7 +78,8 @@ def check_answers(user_input, letters, grid, lives, hangman):
         lives -= 1
         print(hangman_list[hangman])
         hangman += 1
-        print(f"You have {lives} remaining")
+        print(f"You have {lives} lives remaining")
+        print(f"{grid}")
     play_game(letters, grid, lives, hangman)
 
 
