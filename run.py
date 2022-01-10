@@ -52,9 +52,12 @@ def play_game(letters, grid, lives, hangman):
     while True:
         user_input = input("\nEnter a letter:\n").lower()
         if user_input.isalpha():
-            guesses.append(user_input)
-            check_answers(user_input, letters, grid, lives, hangman)
-            return user_input
+            if len(user_input) == 1:
+                guesses.append(user_input)
+                check_answers(user_input, letters, grid, lives, hangman)
+                return user_input
+            else:
+                print("You must only enter a single letter. Try again!")
         else:
             print("Please use only letters, try again")
 
