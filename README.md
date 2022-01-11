@@ -1,5 +1,5 @@
-[Live Link]()
-[GitHub Repository]()
+[Live Link](https://hangman-game-python3.herokuapp.com/)
+[GitHub Repository](https://github.com/sophiebatten123/Hangman)
 
 # Hangman 
 
@@ -7,7 +7,7 @@
 
 Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-![Am I Responsive?]()
+![Am I Responsive?](assets/images/responsive.PNG)
 
 # How to play Hangman
 
