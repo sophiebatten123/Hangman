@@ -34,7 +34,8 @@ If the answer is correct the letter guessed will appear in the correct location 
 ![Lives-incremented](assets/images/try-again.PNG)
 
 ## Future Features
-- Gives the user a hint based upon the word displayed on the screen.
+- Users could be given hints based upon the word displayed on the screen.
+- The game could be used for educational purposes to help pupils revise keywords given definitions.
 
 # Data Model
 
