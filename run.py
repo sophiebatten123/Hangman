@@ -7,6 +7,7 @@ from words import word_list
 from hangman import hangman_list
 
 CONSOLE = Console()
+GUESSES = []
 
 
 def get_word():
@@ -43,7 +44,6 @@ def play_game(letters, grid, lives, hangman, word):
     have been set to specify that the input must be a letter.
     Guessed answers are then added to a list.
     """
-    guesses = []
     if letters == grid:
         CONSOLE.print(f"\nWell done! The word was [red bold]{word}[/red bold]"
                       ":smiley:\n")
@@ -56,9 +56,17 @@ def play_game(letters, grid, lives, hangman, word):
         user_input = input("\nEnter a letter within the word:\n").lower()
         if user_input.isalpha():
             if len(user_input) == 1:
-                guesses.append(user_input)
-                check_answers(user_input, letters, grid, lives, hangman, word)
-                return user_input
+                if len(GUESSES) != 0:
+                    if user_input in GUESSES:
+                        print(f"\nYou have already tried {user_input}!")
+                    else:
+                        check_answers(user_input, letters, grid, lives,
+                                      hangman, word)
+                        return user_input
+                else:
+                    check_answers(user_input, letters, grid, lives,
+                                  hangman, word)
+                    return user_input
             else:
                 print("You must only enter a single letter. Try again!")
         else:
@@ -72,6 +80,7 @@ def check_answers(user_input, letters, grid, lives, hangman, word):
     within the grid. If it is incorrect or the word is incomplete
     keep playing.
     """
+    GUESSES.append(user_input)
     if user_input in letters:
         for index, letter in enumerate(letters):
             if letter == user_input:
