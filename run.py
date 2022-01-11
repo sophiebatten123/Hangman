@@ -10,13 +10,23 @@ CONSOLE = Console()
 GUESSES = []
 
 
-def get_word():
+class GenerateWord:
     """
-    This function generates a random word from the list
-    it then returns the variable once it has been ran
+    Class to generate the random word
     """
-    word = random.choice(word_list)
-    return word
+    def __init__(self, word):
+        """
+        Defines the properties of the function
+        """
+        self.word = word
+
+    def get_word(self):
+        """
+        This function generates a random word from the list
+        it then returns the variable once it has been ran
+        """
+        word = random.choice(word_list)
+        return word
 
 
 def make_board(word):
@@ -112,12 +122,13 @@ def main():
     """
     Main functions are defined within here and initiated from call.
     """
-    word = get_word()
-    make_board(word)
+    random_word = GenerateWord("word").get_word()
+    make_board(random_word)
 
 
 CONSOLE.print("Welcome to Hangman!\n", style='bold u')
 print("The aim of the game is to guess the word by entering letters.")
 print("For every incorrect answer the man will slowly be hung!\n")
 
-main()
+if __name__ == "__main__":
+    main()
