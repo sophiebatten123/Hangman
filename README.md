@@ -23,14 +23,17 @@ If the answer is correct the letter guessed will appear in the correct location 
 
 - Random word generation:
     - Words are randomly generated after each game and the characters within the word are displayed as underscores.
+
 ![Random-word-generation](assets/images/well-done.PNG)
 - Input validation and error-checking:
     - The game accepts the users input and ensures that answers must be written in a certain format.
         - You cannot enter letters. Try Again!
         - You must only enter one letter. Try Again!
         - You have already inputted this answer. Try Again!
+
 ![User-validation-checks](assets/images/error.PNG)
 - Lives are generated for the user to see and this is incremented after each incorrect answer.
+
 ![Lives-incremented](assets/images/try-again.PNG)
 
 ## Future Features
