@@ -31,6 +31,7 @@ def make_board(word):
     lives = 7
     hangman = 0
 
+    print(letters)
     print(grid)
 
     play_game(letters, grid, lives, hangman, word)
