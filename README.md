@@ -37,9 +37,16 @@ If the answer is correct the letter guessed will appear in the correct location 
 - Users could be given hints based upon the word displayed on the screen.
 - The game could be used for educational purposes to help pupils revise keywords given definitions.
 
-# Data Model
+# Program Logic
 
+Below is the logic flow chart used to map out the initial stages of the Hangman game ensuring the code written was efficient and served its purpose.
 
+![Logic-flow-chart](assets/images/flow-chart.PNG)
+
+# Program Libraries
+
+The game uses [Rich 10.16.2](https://rich.readthedocs.io/en/stable/introduction.html) Python library to generate styling and color within in game terminal.
+This Python library was imperative to the game, making elements of the page easier for the user to distinguish and improving the overall UX (User Experience).
 
 # Testing
 The game has been manually tested using the following:
