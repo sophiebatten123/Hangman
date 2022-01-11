@@ -30,7 +30,6 @@ def make_board(word):
     lives = 7
     hangman = 0
 
-    print(letters)
     print(grid)
 
     play_game(letters, grid, lives, hangman, word)
@@ -83,7 +82,7 @@ def check_answers(user_input, letters, grid, lives, hangman, word):
         print(f"{grid}")
     else:
         CONSOLE.print(f"\nTry Again {user_input} was"
-                      "not in the word!", style='red bold')
+                      " not in the word!", style='red bold')
         lives -= 1
         print(hangman_list[hangman])
         hangman += 1
