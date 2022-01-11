@@ -58,6 +58,7 @@ def play_game(letters, grid, lives, hangman, word):
             if len(user_input) == 1:
                 if len(GUESSES) != 0:
                     if user_input in GUESSES:
+                        print(f"{grid}")
                         print(f"\nYou have already tried {user_input}!")
                     else:
                         check_answers(user_input, letters, grid, lives,
@@ -68,8 +69,10 @@ def play_game(letters, grid, lives, hangman, word):
                                   hangman, word)
                     return user_input
             else:
+                print(f"{grid}")
                 print("You must only enter a single letter. Try again!")
         else:
+            print(f"{grid}")
             print("Please use only letters, try again")
 
 
