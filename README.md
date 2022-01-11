@@ -1,31 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+[Live Link]()
+[GitHub Repository]()
 
-Welcome sophiebatten123,
+# Hangman 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+(Developer: Sophie Batten)
 
-## Reminders
+Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![Am I Responsive?]()
 
-## Creating the Heroku app
+# How to play Hangman
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Hangman is a quick and easy word guessing game. The inital set up of the game displays a gallow and an underscore for each letter within the unknown word.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+The player must enter a letter they believe is contained within the word. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+If the answer is correct the letter guessed will appear in the correct location on the corresponding underscore. However, be careful, if too many letters are guessed that do not appear within the word the player is hanged and looses the game. 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+# Features
 
-Connect your GitHub repository and deploy as normal.
+## Existing Features
 
-## Constraints
+- Random word generation:
+    - Words are randomly generated after each game and the characters within the word are displayed as underscores.
+![Random-word-generation]()
+- Input validation and error-checking:
+    - The game accepts the users input and ensures that answers must be written in a certain format.
+        - You cannot enter letters. Try Again!
+        - You must only enter one letter. Try Again!
+        - You have already inputted this answer. Try Again!
+![User-validation-checks]()
+- Lives are generated for the user to see and this is incremented after each incorrect answer.
+![Lives-incremented]()
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Future Features
+- Gives the user a hint based upon the word displayed on the screen.
 
------
-Happy coding!
+# Data Model
+
+
+
+# Testing
+The game has been manually tested using the following:
+- The code was passed through PEP8 linter and this confirmed there were no problems.
+- Code was regularly tested in my local terminal and on the Code Institute Heroku terminal.
+
+# Bugs
+
+
+# Deployment
+This project was deployed using the Code Institute's mock terminal for Heroku.
+
+The steps undertaken for this were:
+1. The repository was cloned.
+2. A Heroku app was created.
+3. Buildbacks were set to Python and NodeJS (specifically in this order).
+4. The Heroku app was linked to the repository.
+5. Deploy button was clicked.
+
+# Credits
+
+- Code Institute for supplying the deployment terminal.
+- The Hangman game was inspired by a YouTube tutorial and the structure of this and initial ideas were used to create my site: [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
+- Help and support was provided by the Code Institute Tutors on some of the logic functions within my site.
+
+Thank you to the tutors of Code Institute for the help given throughout this project.
