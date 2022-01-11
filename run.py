@@ -70,10 +70,10 @@ def play_game(letters, grid, lives, hangman, word):
                     return user_input
             else:
                 print(f"{grid}")
-                print("You must only enter a single letter. Try again!")
+                print("\nYou must only enter a single letter. Try again!\n")
         else:
             print(f"{grid}")
-            print("Please use only letters, try again")
+            print("\nPlease use only letters, try again\n")
 
 
 def check_answers(user_input, letters, grid, lives, hangman, word):
