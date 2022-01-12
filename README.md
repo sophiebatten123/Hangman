@@ -17,6 +17,8 @@ The player must enter a letter they believe is contained within the word.
 
 If the answer is correct the letter guessed will appear in the correct location on the corresponding underscore. However, be careful, if too many letters are guessed that do not appear within the word the player is hanged and looses the game. 
 
+For more information on how to play Hangman click the following link: [Wikipedia - How to play Hangman](https://en.wikipedia.org/wiki/Hangman_(game))
+
 # Features
 
 ## Existing Features
@@ -37,13 +39,17 @@ If the answer is correct the letter guessed will appear in the correct location 
 - Users could be given hints based upon the word displayed on the screen.
 - The game could be used for educational purposes to help pupils revise keywords given definitions.
 
-# Program Logic
+# Data Model
+
+Functions and lists were the predominent features used throughout the game. These were organised carefully to ensure a consistent flow of code which can be seen below:
+
+## Program Logic
 
 Below is the logic flow chart used to map out the initial stages of the Hangman game ensuring the code written was efficient and served its purpose.
 
 ![Logic-flow-chart](assets/images/flow-chart.PNG)
 
-# Program Libraries
+## Program Libraries
 
 The game uses [Rich 10.16.2](https://rich.readthedocs.io/en/stable/introduction.html) Python library to generate styling and color within in game terminal.
 This Python library was imperative to the game, making elements of the page easier for the user to distinguish and improving the overall UX (User Experience).
@@ -55,6 +61,18 @@ The game has been manually tested using the following:
 
 # Bugs
 
+## Solved Bugs
+
+- When writing my code I was getting indentation errors due to either missing a blank line and the end of the document or adding extra white space after a line of code. This was fixed by ensuring all code was appropriately indented and these were highlighted in the 'problems' section of the terminal.
+- Initially the guesses list within my code was returning a blank list after each round of the game. This was a result of the list being defined locally instead of as a global variable. This issue was fixed by globally assigning the variable using UPPERCASE notation.
+
+## Remaining Bugs
+
+- Upon deployment there were no bugs remaining within the code.
+
+## Validator Testing
+
+[PEP8](PEP8online.com) was used to validate my code and no errors were returned.
 
 # Deployment
 This project was deployed using the Code Institute's mock terminal for Heroku.
@@ -69,6 +87,7 @@ The steps undertaken for this were:
 # Credits
 
 - Code Institute for supplying the deployment terminal.
+- [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game)) was referenced within the README file to give users greater instructions on how to play Hangman
 - The Hangman game was inspired by a YouTube tutorial and the structure of this and initial ideas were used to create my site: [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
 - Help and support was provided by the Code Institute Tutors on some of the logic functions within my site.
 
