@@ -11,11 +11,11 @@ Hangman is a Python terminal game, which runs in the Code Institute mock termina
 
 # How to play Hangman
 
-Hangman is a quick and easy word guessing game. The inital set up of the game displays a gallow and an underscore for each letter within the unknown word.
+Hangman is a quick and easy word guessing game. The initial set up of the game displays gallows and an underscore for each letter within the unknown word.
 
 The player must enter a letter they believe is contained within the word. 
 
-If the answer is correct the letter guessed will appear in the correct location on the corresponding underscore. However, be careful, if too many letters are guessed that do not appear within the word the player is hanged and looses the game. 
+If the answer is correct the letter guessed will appear in the correct location on the corresponding underscore. However, be careful, if too many letters are guessed that do not appear within the word the player is hanged and loses the game. 
 
 For more information on how to play Hangman click the following link: [Wikipedia - How to play Hangman](https://en.wikipedia.org/wiki/Hangman_(game))
 
@@ -31,7 +31,7 @@ For more information on how to play Hangman click the following link: [Wikipedia
     - The game accepts the users input and ensures that answers must be written in a certain format.
 
 ![User-validation-checks](assets/images/error.PNG)
-- Lives are generated for the user to see and this is incremented after each incorrect answer.
+- Alongside the hangman model, users are told after each incorrect answer how many guesses they have remaining. This was done to improve UX (User Experience) making the game clear and efficient.
 
 ![Lives-incremented](assets/images/try-again.PNG)
 
@@ -41,7 +41,7 @@ For more information on how to play Hangman click the following link: [Wikipedia
 
 # Data Model
 
-Functions and lists were the predominent features used throughout the game. These were organised carefully to ensure a consistent flow of code which can be seen below:
+Functions and lists were the predominant features used throughout the game. These were organised carefully to ensure a consistent flow of code which can be seen below:
 
 ## Program Logic
 
@@ -51,19 +51,19 @@ Below is the logic flow chart used to map out the initial stages of the Hangman 
 
 ## Program Libraries
 
-The game uses [Rich 10.16.2](https://rich.readthedocs.io/en/stable/introduction.html) Python library to generate styling and color within in game terminal.
+The game uses [Rich 10.16.2](https://rich.readthedocs.io/en/stable/introduction.html) Python library to generate styling and colour within in game terminal.
 This Python library was imperative to the game, making elements of the page easier for the user to distinguish and improving the overall UX (User Experience).
 
 # Testing
 The game has been manually tested using the following:
-- The code was passed through PEP8 linter and this confirmed there were no problems.
+- The code was passed through PEP8 and this confirmed there were no problems.
 - Code was regularly tested in my local terminal and on the Code Institute Heroku terminal.
 
 # Bugs
 
 ## Solved Bugs
 
-- When writing my code I was getting indentation errors due to either missing a blank line and the end of the document or adding extra white space after a line of code. This was fixed by ensuring all code was appropriately indented and these were highlighted in the 'problems' section of the terminal.
+- When writing my code, I was getting indentation errors due to either missing a blank line and the end of the document or adding extra white space after a line of code. This was fixed by ensuring all code was appropriately indented and these were highlighted in the 'problems' section of the terminal.
 - Initially the guesses list within my code was returning a blank list after each round of the game. This was a result of the list being defined locally instead of as a global variable. This issue was fixed by globally assigning the variable using UPPERCASE notation.
 
 ## Remaining Bugs
@@ -88,7 +88,7 @@ The steps undertaken for this were:
 
 - Code Institute for supplying the deployment terminal.
 - [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game)) was referenced within the README file to give users greater instructions on how to play Hangman
-- The Hangman game was inspired by a YouTube tutorial and the structure of this and initial ideas were used to create my site: [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
+- The Hangman game was inspired by a YouTube tutorial and the structure was used to create my site: [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
 - Help and support was provided by the Code Institute Tutors on some of the logic functions within my site.
 
 Thank you to the tutors of Code Institute for the help given throughout this project.
