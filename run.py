@@ -86,8 +86,8 @@ def play_game(letters, grid, lives, hangman, word):
                               " Try again!\n", style='yellow')
         else:
             print(f"{grid}")
-            CONSOLE.print("\nPlease use only letters, try"
-                          " again\n", style='#ffea00')
+            CONSOLE.print("\nPlease use only letters. Try"
+                          " Again!\n", style='#ffea00')
 
 
 def check_answers(user_input, letters, grid, lives, hangman, word):
