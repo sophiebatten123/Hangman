@@ -1,5 +1,4 @@
-[Live Link](https://hangman-game-python3.herokuapp.com/)
-[GitHub Repository](https://github.com/sophiebatten123/Hangman)
+[Hangman Game Live Link](https://hangman-game-python3.herokuapp.com/)
 
 # Hangman 
 
