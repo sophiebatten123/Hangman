@@ -83,11 +83,11 @@ def play_game(letters, grid, lives, hangman, word):
             else:
                 print(f"{grid}")
                 CONSOLE.print("\nYou must only enter a single letter."
-                              "Try again!\n", style='yellow')
+                              " Try again!\n", style='yellow')
         else:
             print(f"{grid}")
             CONSOLE.print("\nPlease use only letters, try"
-                          "again\n", style='yellow')
+                          " again\n", style='yellow')
 
 
 def check_answers(user_input, letters, grid, lives, hangman, word):
