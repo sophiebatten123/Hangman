@@ -6,7 +6,7 @@ from rich.console import Console
 from words import word_list
 from hangman import hangman_list
 
-CONSOLE = Console()
+console = Console()
 GUESSES = []
 
 
@@ -56,7 +56,7 @@ def play_game(letters, grid, lives, hangman, word):
     Guessed answers are then added to a list.
     """
     if letters == grid:
-        CONSOLE.print(f"\nWell done! The word was [red bold]{word}[/red bold]"
+        console.print(f"\nWell done! The word was [red bold]{word}[/red bold]"
                       ":smiley:\n")
         return "Game Complete"
     if lives == 0:
@@ -70,7 +70,7 @@ def play_game(letters, grid, lives, hangman, word):
                 if len(GUESSES) != 0:
                     if user_input in GUESSES:
                         print(f"{grid}")
-                        CONSOLE.print(f"\nYou have already tried {user_input}"
+                        console.print(f"\nYou have already tried {user_input}"
                                       "!", style='#ffea00')
                     else:
                         check_answers(user_input, letters, grid, lives,
@@ -82,11 +82,11 @@ def play_game(letters, grid, lives, hangman, word):
                     return user_input
             else:
                 print(f"{grid}")
-                CONSOLE.print("\nYou must only enter a single letter."
+                console.print("\nYou must only enter a single letter."
                               " Try again!\n", style='#ffea00')
         else:
             print(f"{grid}")
-            CONSOLE.print("\nPlease use only letters. Try"
+            console.print("\nPlease use only letters. Try"
                           " Again!\n", style='#ffea00')
 
 
@@ -103,16 +103,16 @@ def check_answers(user_input, letters, grid, lives, hangman, word):
             if letter == user_input:
                 grid[index] = user_input
 
-        CONSOLE.print(f"\nWell done {user_input} is in"
+        console.print(f"\nWell done {user_input} is in"
                       " the word!", style='bold green')
         print(f"{grid}")
     else:
-        CONSOLE.print(f"\nTry Again {user_input} was"
+        console.print(f"\nTry Again {user_input} was"
                       " not in the word!", style='red bold')
         lives -= 1
         print(hangman_list[hangman])
         hangman += 1
-        CONSOLE.print(f"\nYou have {lives} guesses"
+        console.print(f"\nYou have {lives} guesses"
                       " remaining", style='red bold')
         print(f"{grid}")
     play_game(letters, grid, lives, hangman, word)
@@ -126,7 +126,7 @@ def main():
     make_board(random_word)
 
 
-CONSOLE.print("Welcome to Hangman!\n", style='bold u')
+console.print("Welcome to Hangman!\n", style='bold u')
 print("The aim of the game is to guess the word by entering letters.")
 print("For every incorrect answer the man will slowly be hung!\n")
 
