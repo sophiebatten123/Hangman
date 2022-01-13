@@ -71,7 +71,7 @@ def play_game(letters, grid, lives, hangman, word):
                     if user_input in GUESSES:
                         print(f"{grid}")
                         CONSOLE.print(f"\nYou have already tried {user_input}"
-                                      "!", style='yellow')
+                                      "!", style='#ffea00')
                     else:
                         check_answers(user_input, letters, grid, lives,
                                       hangman, word)
@@ -83,7 +83,7 @@ def play_game(letters, grid, lives, hangman, word):
             else:
                 print(f"{grid}")
                 CONSOLE.print("\nYou must only enter a single letter."
-                              " Try again!\n", style='yellow')
+                              " Try again!\n", style='#ffea00')
         else:
             print(f"{grid}")
             CONSOLE.print("\nPlease use only letters. Try"
